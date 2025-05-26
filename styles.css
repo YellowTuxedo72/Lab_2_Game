@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none
+}
+
+@font-face {
+    font-family: "Klyakson";
+    src: url("/fonts/Klyakson.otf");
+}
+
+body {
+    display: flex;
+    justify-content: center;
+
+    background-color: rgb(0, 0, 0);
+}
+
+/* Меню */
+.MenuBlock {
+    display: none;
+    height: 100dvh;
+}
+
+/* Панель в меню */
+.MenuBar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    height: 100%;
+    padding-left: 7%;
+    padding-top: 10%;
+    width: 40%;
+    color: #ffffff;
+    background: linear-gradient(90deg, rgb(19, 19, 19) 0%, rgb(19, 19, 19, 0.6) 70%, rgba(237, 221, 83, 0) 100%);
+}
+
+h2 {
+    color: rgb(255, 255, 255, 1);
+    font-size: 75px;
+    font-family: "Klyakson";
+}
+
+p {
+    color: rgb(95, 95, 95);
+    font-size: 36px;
+    font-family: "Klyakson";
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+p:hover {
+    color: rgb(177, 177, 177);
+}
+
+/* Окно проигрыша */
+.LooserBlock {
+    font-family: "Klyakson";
+    color: white;
+    z-index: 3;
+    overflow: hidden;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    height: 100dvh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(77, 11, 11);
+    animation: game_over 1s linear;
+}
+
+@keyframes game_over {
+    0% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+
+/* Основная игра */
+.HouseBlock {
+    overflow: hidden;
+    position: relative;
+    display: none;
+    height: 100dvh;
+
+    animation: awake 1s linear;
+}
+
+@keyframes awake {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+
+}
+
+.Screamer {
+    display: none;
+    height: 100dvh;
+    position: absolute;
+    z-index: 3;
+}
+
+/* Блок для диалогов */
+.MessageBox {
+    text-align: center;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+
+    position: absolute;
+    bottom: 15px;
+    min-width: 600px;
+    min-height: 80px;
+    background-color: black;
+    box-shadow: 0 0 0 1px #616161, 0 0 0 2px #757575, 0 0 0 4px #a5a5a5;
+    color: #ffffff;
+    font-family: 'Klyakson';
+    font-size: 24px;
+}
+
+/* Кнопка подойти к окну */
+.btm_got_to_window {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(54.04% 20.54%, 89.07% 0%, 100% 0%, 100% 79.7%, 54.04% 70.54%);
+    cursor: pointer;
+}
+
+/* Кнопка открыть окно */
+.btm_open_window {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "Klyakson";
+    font-size: 36px;
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+/* Кнопка посветить */
+.btn_flashlight {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "Klyakson";
+    font-size: 36px;
+    opacity: 0;
+
+    cursor: pointer;
+
+}
+
+.circle_3 {
+    z-index: 1;
+    position: absolute;
+
+    height: 100px;
+    width: 300px;
+    border-radius: 10%;
+    background-color: rgb(136, 168, 167);
+    opacity: 0.5;
+
+    filter: blur(30px);
+}
+
+/* Кнопка закрыть окно */
+.btn_close_window {
+    z-index: 1;
+
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0% 0%, 12.6% 0%, 12.6% 100%, 85.5% 100%, 85.5% 0%, 100% 0%, 100% 100%, 19.99% 100%, 0% 100%);
+    cursor: pointer;
+}
+
+/* Кнопка отойти от окна */
+.btn_move_away_from_window {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "Klyakson";
+    font-size: 36px;
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+.circle {
+    z-index: 1;
+
+    position: absolute;
+
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    background-color: rgb(136, 168, 167);
+    opacity: 0.5;
+
+    filter: blur(80px);
+}
+
+.circle_2 {
+    z-index: 1;
+    position: absolute;
+
+    height: 100px;
+    width: 300px;
+    border-radius: 10%;
+    background-color: rgb(136, 168, 167);
+    opacity: 0.5;
+
+    filter: blur(30px);
+}
+
+.window_btn:hover {
+    z-index: 1;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+/* Кнопка подойти к тв */
+.btm_got_to_tv {
+    display: none;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(38.93% 54.95%, 52.44% 54.95%, 52.44% 71.29%, 38.93% 71.29%);
+    cursor: pointer;
+}
+
+/* Кнопка отойти от ТВ */
+.btn_move_away_from_tv {
+    display: none;
+
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: "Klyakson";
+    font-size: 36px;
+    opacity: 0;
+
+    cursor: pointer;
+}
+
+.btn_move_away_from_tv:hover {
+    z-index: 1;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.circle_4 {
+    z-index: 1;
+    position: absolute;
+
+    height: 100px;
+    width: 300px;
+    border-radius: 10%;
+    background-color: rgb(136, 168, 167);
+    opacity: 0.5;
+
+    filter: blur(30px);
+}
+
+/* Смена камер */
+.btn_switch_channel {
+    position: absolute;
+    right: 14.5%;
+    top: 14%;
+    height: 35%;
+    width: 4%;
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn_switch_channel .btn_tv {
+    background-color: rgb(136, 168, 167);
+    opacity: 0;
+    height: 30%;
+    width: 100%;
+    filter: blur(5px);
+    cursor: pointer;
+    border-radius: 30%;
+}
+
+.btn_tv:hover {
+    opacity: 0.2;
+}
+
+.OutsideBlock {
+    position: absolute;
+    z-index: -1;
+    height: 100dvh;
+}
+
+.TvBlock {
+    display: none;
+    z-index: -1;
+    position: absolute;
+    left: 43%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(0, 0, 0);
+    background-size:cover;
+    height: 87%;
+    width: 50%;
+}
+
+.TvBlockBackground {
+    height: 100%;
+}

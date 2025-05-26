@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forest</title>
+    <link rel="icon" href="/images/icon.png" type="image/x-icon" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Меню -->
+    <div class="MenuBlock">
+      <div class="MenuBar">
+        <h2>Forest</h2>
+        <p class="ButtonStart">Начать</p>
+      </div>
+      <img class="MenuBackground" src="/images/menu/0205.png" height="100%" />
+    </div>
+    <!-- Основная игра -->
+    <div class="HouseBlock">
+      <img class="Screamer" height="100%"/>
+      <img
+        class="HouseBackground"
+        src="/images/house_background/getting_out_of_bed/0001.png"
+        height="100%"
+      />
+      <img
+        class="OutsideBlock"
+        data-info="false"
+        src="/images/outside_environment/stranger_script_1/0075.png"
+        height="100%"
+      />
+      <!-- Кнопка подойти к окну -->
+      <div class="btm_got_to_window"></div>
+      <!-- Кнопки у окна -->
+      <!-- Открыть окно -->
+      <div class="btm_open_window window_btn">
+        Открыть
+        <div class="circle"></div>
+      </div>
+      <!-- Посветить в окно -->
+      <div class="btn_flashlight window_btn">
+        Посветить
+        <div class="circle_3"></div>
+      </div>
+      <!-- Закрыть окно -->
+      <div class="btn_close_window"></div>
+      <!-- Отойти от окна -->
+      <div class="btn_move_away_from_window window_btn">
+        Назад
+        <div class="circle_2"></div>
+      </div>
+      <!-- Кнопка подойти к тв -->
+      <div class="btm_got_to_tv"></div>
+      <!-- Кнопки у тв -->
+      <!-- Переключить камеру -->
+      <div class="btn_switch_channel">
+        <div class="btn_tv_1 btn_tv"></div>
+        <div class="btn_tv_2 btn_tv"></div>
+        <div class="btn_tv_3 btn_tv"></div>
+        <div class="btn_tv_4 btn_tv"></div>
+        <div class="btn_tv_5 btn_tv"></div>
+        <div class="btn_tv_6 btn_tv"></div>
+      </div>
+      <div class="btn_move_away_from_tv">
+        Назад
+        <div class="circle_4"></div>
+      </div>
+      <!-- Текстовый блок -->
+      <div class="MessageBox"></div>
+      <!-- Проигрыш -->
+      <div class="LooserBlock">
+      <h2>Вы проиграли</h2>
+      <p class="ButtonStart_2">Начать заново</p>
+    </div>
+    <div class="TvBlock">
+      <img class="TvBlockBackground"src="">
+    </div>
+    </div>
+    <script src="/main.js"></script>
+  </body>
+</html>
